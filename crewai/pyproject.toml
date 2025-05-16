@@ -1,0 +1,27 @@
+[project]
+name = "crewai2"
+version = "0.1.0"
+description = "crewai2 using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "crewai[tools]>=0.120.1,<1.0.0",
+  "gradio==5.16.0",
+  "crew (>=0.9.2,<0.10.0)",
+  "dateparser (>=1.2.1,<2.0.0)",
+  "stripe (>=12.1.0,<13.0.0)"
+]
+
+[project.scripts]
+crewai2 = "crewai2.main:run"
+run_crew = "crewai2.main:run"
+train = "crewai2.main:train"
+replay = "crewai2.main:replay"
+test = "crewai2.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
