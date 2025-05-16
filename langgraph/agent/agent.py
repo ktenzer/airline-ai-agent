@@ -11,7 +11,7 @@ from langchain_core.agents import AgentFinish, AgentAction
 from langchain_core.runnables import RunnableLambda
 
 # Load environment variables
-load_dotenv()
+load_dotenv(override=True)
 
 # === Tools ===
 from agent_tools.find_flights import find_flights

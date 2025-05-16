@@ -2,7 +2,7 @@ import stripe
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 stripe.api_key = os.getenv("STRIPE_API_KEY")
 
 def book_flight(flight_id: str, price: str):

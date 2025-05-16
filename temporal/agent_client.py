@@ -1,8 +1,10 @@
 from temporalio.client import Client, TLSConfig
 from temporalio.runtime import PrometheusConfig, Runtime, TelemetryConfig
 from typing import Optional
+from dotenv import load_dotenv
 import os
 
+load_dotenv(override=True)
 async def get_client()-> Client:
 
     if (

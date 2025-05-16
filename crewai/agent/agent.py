@@ -7,7 +7,7 @@ from crewai.tools import tool
 from agent_tools.find_flights import find_flights
 from agent_tools.book_flight  import book_flight
 
-load_dotenv()
+load_dotenv(override=True)
 
 @tool("find_flights")
 def find_flights_tool(origin: str, destination: str, departure_date: str, return_date: str):

@@ -13,7 +13,7 @@ from langchain_core.agents import AgentFinish, AgentAction
 from typing import Any, Dict, List
 
 # Load OpenAI key for agent
-load_dotenv()
+load_dotenv(override=True)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Initialize LLM
 llm = ChatOpenAI(model="gpt-4", temperature=0, api_key=OPENAI_API_KEY)
