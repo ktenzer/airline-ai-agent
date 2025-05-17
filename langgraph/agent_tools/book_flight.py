@@ -1,4 +1,3 @@
-# agent_tools/book_flight.py
 import stripe
 import os
 from dotenv import load_dotenv

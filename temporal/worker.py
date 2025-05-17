@@ -1,6 +1,3 @@
-###############################
-# worker.py
-###############################
 import os
 import asyncio
 from temporalio.worker import Worker

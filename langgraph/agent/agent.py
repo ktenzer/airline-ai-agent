@@ -1,13 +1,11 @@
-# agent/agent.py
 import os
-import json
 from dotenv import load_dotenv
 from typing import TypedDict, List, Any, Union
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.agents import tool, create_tool_calling_agent
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END
-from langchain_core.agents import AgentFinish, AgentAction
+from langchain_core.agents import AgentFinish
 from langchain_core.runnables import RunnableLambda
 
 # Load environment variables
