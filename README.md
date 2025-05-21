@@ -75,3 +75,19 @@ Start UI
 ```bash
 $ poetry run python ui.py
 ```
+
+## OpenAI
+Install Poetry Dependencies
+```bash
+$ poetry install
+```
+
+Update .env
+```bash
+$ cp .env.example .env
+```
+
+Start UI
+```bash
+$ poetry run python ui.py
+```
