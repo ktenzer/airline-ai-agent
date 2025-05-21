@@ -10,7 +10,7 @@ def book_flight(flight_id: str, price: str):
     try:
         amount = int(float(price.replace('$', '')) * 100)
     except ValueError:
-        return {"error": "❌ Invalid price format."}
+        return {"error": "Invalid price format."}
 
     try:
         customer = stripe.Customer.create(source="tok_visa")
@@ -22,4 +22,4 @@ def book_flight(flight_id: str, price: str):
         )
         return {"invoice_url": charge.receipt_url}
     except Exception as e:
-        return {"error": f"❌ Stripe error: {str(e)}"}
+        return {"error": f"Stripe error: {str(e)}"}

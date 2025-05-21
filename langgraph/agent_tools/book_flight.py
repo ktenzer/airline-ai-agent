@@ -14,7 +14,7 @@ def book_flight(flight_id: str, price: str):
         # Convert price to cents
         amount = int(float(price.replace('$', '')) * 100)
     except ValueError:
-        return {"error": "❌ Invalid price format."}
+        return {"error": "Invalid price format."}
 
     try:
         # Create a test payment
@@ -34,4 +34,4 @@ def book_flight(flight_id: str, price: str):
         }
 
     except Exception as e:
-        return {"error": f"❌ Stripe error: {str(e)}"}
+        return {"error": f"Stripe error: {str(e)}"}

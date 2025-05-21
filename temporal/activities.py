@@ -47,7 +47,7 @@ async def find_flights(origin: str, destination: str, departure_date: str, retur
     depart = parse_date(departure_date)
     ret = parse_date(return_date)
     if not depart or not ret:
-        return {"error": "❌ Could not parse one or both dates."}
+        return {"error": "Could not parse one or both dates."}
     valid = any(
         r["origin"] == origin_code and r["destination"] == destination_code
         for r in MOCK_ROUTES
@@ -77,7 +77,7 @@ async def book_flight(flight_id: str, price: str) -> Any:
     try:
         amount = int(float(price.replace('$', '')) * 100)
     except ValueError:
-        return {"error": "❌ Invalid price format."}
+        return {"error": "Invalid price format."}
     try:
         customer = stripe.Customer.create(source="tok_visa")
         charge = stripe.Charge.create(
@@ -88,7 +88,7 @@ async def book_flight(flight_id: str, price: str) -> Any:
         )
         return {"receipt_url": charge.receipt_url}
     except Exception as e:
-        return {"error": f"❌ Stripe error: {str(e)}"}
+        return {"error": f"Stripe error: {str(e)}"}
 
 # Tools
 @tool

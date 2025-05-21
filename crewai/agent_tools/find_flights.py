@@ -21,14 +21,14 @@ def parse_date(date_str: str) -> str:
     return dt.strftime("%Y-%m-%d") if dt else None
 
 def find_flights(origin: str, destination: str, departure_date: str, return_date: str):
-    print(f"✅ [find_flights] Called with: {origin=}, {destination=}, {departure_date=}, {return_date=}")
+    print(f"[find_flights] Called with: {origin=}, {destination=}, {departure_date=}, {return_date=}")
     origin_code = origin.strip().upper()
     destination_code = destination.strip().upper()
     depart = parse_date(departure_date)
     ret = parse_date(return_date)
-    print(f"✅ [find_flights] Parsed dates: {depart=} {ret=}")
+    print(f"[find_flights] Parsed dates: {depart=} {ret=}")
     if not depart or not ret:
-        return {"error": "❌ Could not parse one or both dates."}
+        return {"error": "Could not parse one or both dates."}
     if not any(r["origin"] == origin_code and r["destination"] == destination_code for r in MOCK_ROUTES):
         return {
             "error": "We currently only support mock routes from LAX to a few destinations.",
@@ -46,5 +46,5 @@ def find_flights(origin: str, destination: str, departure_date: str, return_date
             "price": f"{price:.2f}",
             "currency": "USD"
         })
-    print(f"✅ [find_flights] Returning {len(flights)} flights")
+    print(f"[find_flights] Returning {len(flights)} flights")
     return flights
