@@ -6,13 +6,13 @@ load_dotenv()
 stripe.api_key = os.getenv("STRIPE_API_KEY")
 
 def book_flight(flight_id: str, price: str):
-    print(f"📥 [book_flight] Called with: flight_id={flight_id}, price={price}")
+    print(f"[book_flight] Called with: flight_id={flight_id}, price={price}")
 
     try:
         amount = int(float(price.replace('$', '')) * 100)
     except ValueError:
-        result = {"status": "error", "message": "❌ Invalid price format."}
-        print(f"📤 [book_flight] Returning: {result}")
+        result = {"status": "error", "message": "Invalid price format."}
+        print(f"[book_flight] Returning: {result}")
         return result
 
     try:
@@ -30,10 +30,10 @@ def book_flight(flight_id: str, price: str):
             "flight_id": flight_id,
             "price": price
         }
-        print(f"📤 [book_flight] Returning: {result}")
+        print(f"[book_flight] Returning: {result}")
         return result
 
     except Exception as e:
-        result = {"status": "error", "message": f"❌ Booking failed: {str(e)}"}
-        print(f"📤 [book_flight] Returning: {result}")
+        result = {"status": "error", "message": f"Booking failed: {str(e)}"}
+        print(f"[book_flight] Returning: {result}")
         return result
